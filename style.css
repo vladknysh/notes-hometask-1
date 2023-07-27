@@ -1,0 +1,183 @@
+/* styles.css */
+
+/* Body and Background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+#app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 10px;
+    border: 1px solid #444;
+}
+
+/* Table Header */
+table th {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Table Rows */
+table tr {
+    background-color: #333;
+}
+
+table tr:nth-child(even) {
+    background-color: #2c2c2c;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* Edit Button */
+.btn-edit {
+    background-color: #777;
+}
+
+/* Archive Button */
+.btn-archive {
+    background-color: #555;
+}
+
+/* Remove Button */
+.btn-remove {
+    background-color: #470b0b;
+}
+
+/* Buttons Hover */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Add Note Form */
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* Form Buttons */
+form button {
+    margin-top: 10px;
+}
+
+/* Edit Form Overlay */
+#edit-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.form-container {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Archived Notes Table */
+#archived-notes-container {
+    margin-top: 20px;
+}
+
+/* Archived Notes Table Headers */
+#archived-notes-table th {
+    background-color: #444;
+}
+
+/* Archived Notes Table Rows */
+#archived-notes-table tr {
+    background-color: #333;
+}
+
+#archived-notes-table tr:nth-child(even) {
+    background-color: #2c2c2c;
+}
+
+/* No Archived Notes Message */
+#no-archived-notes-message {
+    color: #fff;
+    text-align: center;
+}
+
+/* Summary Table */
+#summary-table {
+    margin-top: 20px;
+}
+
+/* Summary Table Headers */
+#summary-table th {
+    background-color: #444;
+}
+
+/* Summary Table Rows */
+#summary-table tr {
+    background-color: #333;
+}
+
+/* Show Archived Notes Button */
+#show-archived-notes-button {
+    margin-top: 10px;
+}
+
+/* Edit Form Inputs */
+.form-container .input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* Edit Form Buttons */
+.form-container button {
+    margin-top: 10px;
+}
+
+/* ... Add any additional styles here ... */

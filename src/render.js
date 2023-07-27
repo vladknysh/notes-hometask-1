@@ -147,6 +147,7 @@ const showEditFormOverlay = () => {
   titleInput.type = 'text';
   titleInput.value = selectedNote.title;
   titleInput.name = 'title'; // Adding a name attribute for later reference
+  titleInput.classList.add('input-field'); // Add the class for styling
   formContainer.appendChild(titleLabel);
   formContainer.appendChild(titleInput);
 
@@ -155,6 +156,7 @@ const showEditFormOverlay = () => {
   const contentInput = document.createElement('textarea');
   contentInput.value = selectedNote.content;
   contentInput.name = 'content'; // Adding a name attribute for later reference
+  contentInput.classList.add('input-field'); // Add the class for styling
   formContainer.appendChild(contentLabel);
   formContainer.appendChild(contentInput);
 
@@ -169,12 +171,14 @@ const showEditFormOverlay = () => {
   });
   categorySelect.value = selectedNote.category;
   categorySelect.name = 'category'; // Adding a name attribute for later reference
+  categorySelect.classList.add('input-field'); // Add the class for styling
   formContainer.appendChild(categoryLabel);
   formContainer.appendChild(categorySelect);
 
   const saveButton = document.createElement('button');
   saveButton.textContent = 'Save';
   saveButton.addEventListener('click', () => handleSave(titleInput.value, contentInput.value, categorySelect.value));
+  saveButton.classList.add('btn'); // Add the class for button styling
   formContainer.appendChild(saveButton);
 
   editFormOverlay.appendChild(formContainer);

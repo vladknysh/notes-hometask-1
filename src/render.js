@@ -1,15 +1,23 @@
 // render.js
 
 import { getActiveNotes, getSummary, archiveNote, unarchiveNote, removeNote, editNote, addNote, getArchivedNotes } from './notes.js';
-import {categoriesData, extractDatesFromNoteContent} from './data.js';
+import { categoriesData, extractDatesFromNoteContent } from './data.js';
 import { nanoid } from 'nanoid';
 
 // Global variable to store the selected note for editing
 let selectedNote = null;
 
 // Render the "Add Note" form
+let addNoteForm = null; // Declare a variable to store the reference to the "Add Note" form
+
 const renderAddNoteForm = () => {
-  const addNoteForm = document.createElement('form');
+  if (addNoteForm) {
+    // If the form already exists, show it and return
+    addNoteForm.style.display = 'block';
+    return;
+  }
+
+  addNoteForm = document.createElement('form');
   addNoteForm.addEventListener('submit', handleAddNoteSubmit);
 
   const titleLabel = document.createElement('label');
@@ -98,6 +106,7 @@ const createButton = (label, onClick) => {
   const button = document.createElement('button');
   button.textContent = label;
   button.addEventListener('click', onClick);
+  button.classList.add('btn'); // Add the class for button styling
   return button;
 };
 
@@ -260,6 +269,9 @@ const handleAddNoteSubmit = (event) => {
     addNote({ title, content, category, time, id: nanoid() }); // Include the time and generate an id using nanoid()
     form.reset();
     renderNotesTableAndSummary();
+
+    // Hide the "Add Note" form after successfully adding the note
+    addNoteForm.style.display = 'none';
   } catch (error) {
     console.error(error.message); // Log the error message to the console
   }
@@ -352,7 +364,13 @@ const showAddNoteForm = () => {
     editFormOverlay.remove();
   }
 
-  // Show the "Add Note" form overlay
+  // If the "Add Note" form already exists, show it and return
+  if (addNoteForm) {
+    addNoteForm.style.display = 'block';
+    return;
+  }
+
+  // If the form doesn't exist, create and render it
   renderAddNoteForm();
 };
 
@@ -363,3 +381,4 @@ export const renderApp = () => {
 
   renderNotesTableAndSummary();
 };
+
